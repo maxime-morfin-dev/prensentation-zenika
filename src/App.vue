@@ -16,7 +16,7 @@ const toggleIsMemoryGridShow:() =>boolean = () => isMemoryGridShow.value = !isMe
     <div v-show="isMemoryGridShow">
       <MemoryGrid />
     </div>
-    <button @click="toggleIsMemoryGridShow" class="w-52 m-auto flex- block text-center bg-emerald-700 bg-opacity-50 p-4 rounded-md" v-show="!isMemoryGridShow">Jouer !</button>
+    <button @click="toggleIsMemoryGridShow" class="w-52 m-auto flex- block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md" v-show="!isMemoryGridShow">Jouer !</button>
   </div>
 </template>
 
