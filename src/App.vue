@@ -1,47 +1,22 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import Rules from './components/Rules.vue';
+import MemoryGrid from './components/MemoryGrid.vue';
+import { ref, type Ref } from 'vue';
+
+const isMemoryGridShow: Ref<boolean> = ref(false)
+const toggleIsMemoryGridShow:() =>boolean = () => isMemoryGridShow.value = !isMemoryGridShow.value
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="h-screen flex flex-col">
+    <header>
+      <h1 class="text-2xl font-semibold text-center bg-zinc-700 bg-opacity-50 rounded-md py-4">Bienvenue sur Maximory ! <span>🚀</span></h1>
+    </header>
+    <Rules/>
+    <div v-show="isMemoryGridShow">
+      <MemoryGrid />
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <button @click="toggleIsMemoryGridShow" class="w-52 m-auto flex- block text-center bg-emerald-700 bg-opacity-50 p-4 rounded-md" v-show="!isMemoryGridShow">Jouer !</button>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
