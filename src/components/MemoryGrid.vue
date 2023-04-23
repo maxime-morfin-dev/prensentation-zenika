@@ -1,5 +1,5 @@
 <template>
-   <div v-if="!store.isWinner" class="grid grid-cols-2 gap-8">
+   <div v-if="!store.isWinner" class="grid grid-cols-2 gap-8 mt-8">
       <div  v-for="(card) in cards.sort(() => 0.5 - Math.random())" :key="card.id">
          <MemoryCard :id="card.id"/>
       </div>

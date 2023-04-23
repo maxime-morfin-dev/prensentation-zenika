@@ -1,9 +1,7 @@
 <template>
    <div @click="toggleCardShow(id)" class="cursor-pointer">
-      <div v-if="!cards.find((card) => card.id == id).show" class="bg-sky-300 bg-opacity-50 p-4 h-48 rounded-xl">
-         {{ id }}
-      </div>
-      <div v-else class="bg-emerald-300 bg-opacity-50 p-4 h-48 rounded-xl flex items-center justify-center">
+      <div v-if="!cards.find((card) => card.id == id).show" class="bg-sky-300 bg-opacity-50 p-4 h-48 rounded-sm"/>
+      <div v-else class="bg-emerald-300 bg-opacity-50 p-4 h-48 rounded-sm flex items-center justify-center">
          {{ cards.find((card) => card.id == id).value }}
       </div>
    </div>
