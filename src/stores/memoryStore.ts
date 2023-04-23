@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { useInformationStore } from './informationStore'
 
 interface State {
    cards: CardInterface[] | any[],

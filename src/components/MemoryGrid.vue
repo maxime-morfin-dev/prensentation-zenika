@@ -5,9 +5,9 @@
       </div>
    </div>
    <div v-else>
-      <div class="uppercase font-semibold my-8">
+      <div class="uppercase font-semibold my-auto">
          <ConfettiExplosion :particleCount="200" :force="0.3" :="" />
-         <h2 class="flex flex-col gap-4 m-auto text-xl text-center mt-24">Bravo vous savez tout, <span class="lowercase block italic">ou presque...,</span> <span class="block font-semibold"> sur moi 🎉</span></h2>
+         <h2 class="flex flex-col gap-4 m-auto text-xl text-center mt-24">Bravo vous savez tout  sur moi 🎉<span class="lowercase block italic">ou presque...</span> </h2>
       </div>
    </div>
    

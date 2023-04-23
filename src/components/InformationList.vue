@@ -4,18 +4,14 @@
       class="w-full font-medium text-sm"
       v-show="actualInformation"
     >
-      <div class="bg-white bg-opacity-90 w-full p-8 rounded-3xl rounded-tl-none text-zinc-700">
-        <div class="flex flex-col items-start justify-start">
-         <span>{{ actualInformation && actualInformation.icone }}</span>
-         <span>{{ actualInformation && actualInformation.value }}</span>
-        </div>
-      </div>
+      <InformationCard />
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { useMemoryStore } from '@/stores/memoryStore';
 import { storeToRefs } from 'pinia';
+import InformationCard from './InformationCard.vue';
 
 const store = useMemoryStore()
 const { actualInformation } = storeToRefs(store)

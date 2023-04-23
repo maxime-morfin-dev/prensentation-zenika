@@ -5,26 +5,27 @@ import MemoryGrid from './components/MemoryGrid.vue'
 import InformationList from './components/InformationList.vue'
 import { useMemoryStore } from './stores/memoryStore'
 import { storeToRefs } from 'pinia'
+import type InformationListVue from './components/InformationList.vue'
 
 const store = useMemoryStore()
 const isMemoryGridShow: Ref<boolean> = ref(false)
 const toggleIsMemoryGridShow: () => boolean = () =>
   (isMemoryGridShow.value = !isMemoryGridShow.value)
 const {isWinner} = storeToRefs(store)
-const {actualInformation} = storeToRefs(store)
 </script>
 
 <template>
   <!-- Desktop -->
-  <div class="hidden lg:flex gap-8 justify-around items-start h-screen">
-    <div class="w-1/3">
-      <header>
+  <header>
         <h1
-          class="text-2xl font-semibold text-center rounded-md p-4 mt-8"
+          class="text-2xl font-semibold text-start rounded-md p-8 pl-0 w-full"
         >
           Bienvenue sur Maximory ! <span>🚀</span>
         </h1>
       </header>
+  <div class="hidden lg:flex gap-8 justify-center items-start">
+    <div class="w-1/3">
+      
       <Rules />
       <button
         @click="toggleIsMemoryGridShow"
@@ -44,8 +45,8 @@ const {actualInformation} = storeToRefs(store)
       >
         Reset !
       </button>
-        <div>
-          {{ actualInformation && actualInformation.value }}
+        <div class="mt-8">
+          <InformationList />
         </div>
       </div>
     </div>
