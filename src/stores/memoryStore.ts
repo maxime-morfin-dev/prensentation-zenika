@@ -15,8 +15,13 @@ export const useMemoryStore = defineStore('memory', {
   //getters
   //actions
   actions : {
-      toggleCard(index: number | undefined){
-         this.cards[index!].show = !this.cards[index!].show
+      toggleCardShow(id: number | undefined){
+         console.log("toggle");
+         
+         const card = this.cards.find((card) => card.id == id)
+         if(card) {
+            card.show = !card.show
+         }
       }
   }
 })
