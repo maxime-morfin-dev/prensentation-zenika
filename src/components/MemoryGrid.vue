@@ -1,18 +1,20 @@
 <template>
    <div class="grid grid-cols-2 gap-8">
-      <MemoryCard  v-for="(card, index) in cards" key="card.index"/>
+      <MemoryCard  v-for="(card) in cards" :key="card.id" :value="card.value"/>
    </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, type DefineComponent, type Ref } from 'vue';
+import { ref, type Ref } from 'vue';
 import MemoryCard from './MemoryCard.vue';
 
-const cards:Ref<Array<any>> = ref([])
+const cards:Ref<Array<any>> = ref([
+   {id: 1, value: "🚀", show: false},
+   {id: 2, value: "🚀", show: false},
+   {id: 3, value: "🚤", show: false},
+   {id: 4, value: "🚤", show: false},
+   {id: 5, value: "🚁", show: false},
+   {id: 6, value: "🚁", show: false},
+])
 
-onMounted(() => {
-   for(let i=0; i<=16; i++){
-      cards.value.push(i)
-   }
-})
 </script>
