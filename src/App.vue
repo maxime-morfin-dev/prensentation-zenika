@@ -20,7 +20,7 @@ const {actualInformation} = storeToRefs(store)
     <div class="w-1/3">
       <header>
         <h1
-          class="text-2xl font-semibold text-center bg-zinc-700 bg-opacity-50 rounded-md p-4 mt-8"
+          class="text-2xl font-semibold text-center rounded-md p-4 mt-8"
         >
           Bienvenue sur Maximory ! <span>🚀</span>
         </h1>
@@ -28,19 +28,19 @@ const {actualInformation} = storeToRefs(store)
       <Rules />
       <button
         @click="toggleIsMemoryGridShow"
-        class="w-52 m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md"
+        class="m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md w-full"
         v-show="!isMemoryGridShow"
       >
         Jouer !
       </button>
       <div v-if="!isWinner">
-        <div v-if="isMemoryGridShow" class="text-center mb-8">Progress bar here</div>
+        <!-- <div v-if="isMemoryGridShow" class="text-center mb-8 bg-white bg-opacity-50 px-4 py-1 rounded-sm">Progress bar here</div> -->
         <InformationList />
       </div>
       <div v-else>
         <button
         @click="toggleIsMemoryGridShow"
-        class="w-52 m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md"
+        class="m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md w-full"
       >
         Reset !
       </button>
@@ -68,7 +68,7 @@ const {actualInformation} = storeToRefs(store)
     </div>
     <button
       @click="toggleIsMemoryGridShow"
-      class="w-52 m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md"
+      class="m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md"
       v-else
     >
       Jouer !
