@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 interface State {
-   cards: any,
+   cards: CardInterface[] | any[],
    pairChoice: PairChoiceInterface[] | any[],
    winArray: WinArrayInterface[] | any[]
 }
@@ -10,6 +10,11 @@ interface PairChoiceInterface {
    show: boolean
 }
 interface WinArrayInterface {
+   id: number,
+   value: string,
+   show: boolean
+}
+interface CardInterface {
    id: number,
    value: string,
    show: boolean
@@ -32,12 +37,16 @@ export const useMemoryStore = defineStore('memory', {
   //actions
   actions : {
       toggleCardShow(id: number | undefined){
-         if(this.cards[id!].show){
+         console.log('id', id);
+         
+         if(this.cards.find((card:CardInterface) => card.id == id).show){
             return
          }
-         const card = this.cards.find((card: { id: number | undefined; }) => card.id == id)
+         const card = this.cards.find((card: CardInterface) => card.id == id)
          if(card &&  !this.winArray.includes(card)) {
+            console.log(card);
             card.show = !card.show
+            console.log(card);
             this.checkFunction(card)
          }
       },
@@ -46,18 +55,12 @@ export const useMemoryStore = defineStore('memory', {
             //If array empty add first choice
             this.pairChoice.push(card)
          }else{
-            console.log('else');
-            
             if(this.pairChoice.length == 2){
-               console.log('la');
-               
                this.pairChoice.forEach(pair => {
-                  this.cards[pair.id].show = false
+                  this.cards.find((card:CardInterface) => card.id == pair.id).show = false
                });
                this.pairChoice = [card]
             }else{
-               console.log('else else');
-               
                if(this.pairChoice[0].value == card.value){
                   this.winArray.push(...arguments, this.pairChoice[0], this.pairChoice[1])
                   this.pairChoice= []
