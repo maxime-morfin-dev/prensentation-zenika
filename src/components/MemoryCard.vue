@@ -13,7 +13,7 @@
    import { useMemoryStore } from '@/stores/memoryStore';
 import { storeToRefs } from 'pinia';
 
-   const props = defineProps({
+   defineProps({
       id: Number
    })
    const store = useMemoryStore()
