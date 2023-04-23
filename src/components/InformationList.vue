@@ -6,17 +6,17 @@
       class="w-full font-medium text-sm"
     >
       <div v-show="information.show" class="bg-white bg-opacity-90 w-full p-4 rounded-md text-zinc-700">
-        {{ information.value }}
+        <div class="flex flex-col items-start justify-start">
+         <span>{{ information.icone }}</span>
+         <span>{{ information.value }}</span>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { useInformationStore } from '@/stores/informationStore'
-import { useMemoryStore } from '@/stores/memoryStore'
 
 const store = useInformationStore()
-const memoryStore = useMemoryStore()
 const { informations } = store
-const { winArray } = memoryStore
 </script>

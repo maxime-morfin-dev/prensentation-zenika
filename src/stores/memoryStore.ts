@@ -30,12 +30,22 @@ export const useMemoryStore = defineStore('memory', {
    //state
    state: () : State => ({
       cards: [
-         { id: 0, value: '🚀', show: false, informationId:0 },
-         { id: 1, value: '🚀', show: false, informationId:0 },
-         { id: 2, value: '🚤', show: false, informationId:1 },
-         { id: 3, value: '🚤', show: false, informationId:1 },
-         { id: 4, value: '🚁', show: false, informationId:2 },
-         { id: 5, value: '🚁', show: false, informationId:2 }
+         { id: 0, value: '🧑‍🚒', show: false, informationId:0 },
+         { id: 1, value: '🧑‍🚒', show: false, informationId:0 },
+         { id: 2, value: '🇷🇪', show: false, informationId:1 },
+         { id: 3, value: '🇷🇪', show: false, informationId:1 },
+         { id: 4, value: '🛣️', show: false, informationId:2 },
+         { id: 5, value: '🛣️', show: false, informationId:2 },
+         { id: 6, value: '♥️', show: false, informationId:3 },
+         { id: 7, value: '♥️', show: false, informationId:3 },
+         { id: 8, value: '👴🏻', show: false, informationId:4 },
+         { id: 9, value: '👴🏻', show: false, informationId:4 },
+         { id: 10, value: '🤓', show: false, informationId:5 },
+         { id: 11, value: '🤓', show: false, informationId:5 },
+         { id: 12, value: '🧗‍♂️', show: false, informationId:6 },
+         { id: 13, value: '🧗‍♂️', show: false, informationId:6 },
+         { id: 14, value: '🎸', show: false, informationId:7 },
+         { id: 15, value: '🎸', show: false, informationId:7 },
       ],
       pairChoice: [],
       winArray: [],
@@ -74,7 +84,7 @@ export const useMemoryStore = defineStore('memory', {
                   const informationStore = useInformationStore()
                   informationStore.toggleShowInformation(this.pairChoice[0].informationId)
                   this.pairChoice= []
-                  if(this.winArray.length == 6){
+                  if(this.winArray.length == 16){
                      this.isWinner = true
                   }
                }else{
