@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { ref, type Ref } from 'vue';
 import Rules from './components/Rules.vue';
 import MemoryGrid from './components/MemoryGrid.vue';
-import { ref, type Ref } from 'vue';
+import InformationList from './components/InformationList.vue';
 
 const isMemoryGridShow: Ref<boolean> = ref(false)
 const toggleIsMemoryGridShow:() =>boolean = () => isMemoryGridShow.value = !isMemoryGridShow.value
@@ -13,6 +14,7 @@ const toggleIsMemoryGridShow:() =>boolean = () => isMemoryGridShow.value = !isMe
       <h1 class="text-2xl font-semibold text-center bg-zinc-700 bg-opacity-50 rounded-md py-4 mt-8">Bienvenue sur Maximory ! <span>🚀</span></h1>
     </header>
     <Rules/>
+    <InformationList />
     <div v-if="isMemoryGridShow">
       <MemoryGrid />
     </div>
