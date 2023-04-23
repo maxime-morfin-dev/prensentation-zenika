@@ -1,9 +1,12 @@
 <template>
    <div @click="toggleRulesOpen" class="my-8 p-4 bg-zinc-700 bg-opacity-50 rounded-md cursor-pointer">
-      <h2 class="font-semibold flex gap-1 items-center justify-start">Règles du jeu <span v-if="!isRulesOpen"><ArrowDown/></span><span v-else><ArrowUp/></span></h2>
+      <h2 class="font-semibold flex gap-1 items-center justify-start text-lg">Règles du jeu <span v-if="!isRulesOpen"><ArrowDown/></span><span v-else><ArrowUp/></span></h2>
       <div v-show="isRulesOpen" class="mt-4">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque exercitationem eius doloribus quis perspiciatis reprehenderit enim quos magni incidunt porro minus pariatur odit mollitia, et accusamus, sapiente in tenetur eaque.
-   </div>
+         <p>Les règles sont <span class="font-bold">simples </span> 🎯: </p>   
+         <p>Parmis toutes ces cartes retournées se trouves des <span class="font-bold">paires identiques 👯‍♀️</span></p>
+         <p>L'idée est de trouver chaque paire qui vous donnera une <span class="font-bold">information sur moi 🙋‍♂️</span></p>
+         <p>A une fois toutes <span class="font-bold">les paires trouvées</span> vous saurez tout ou presque sur moi 🍾!</p>
+      </div>
    </div>
 </template>
 
