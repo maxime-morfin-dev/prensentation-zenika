@@ -3,6 +3,7 @@ interface State {
    cards: CardInterface[] | any[],
    pairChoice: PairChoiceInterface[] | any[],
    winArray: WinArrayInterface[] | any[]
+   isWinner: boolean
 }
 interface PairChoiceInterface {
    id: number,
@@ -32,6 +33,7 @@ export const useMemoryStore = defineStore('memory', {
     ],
     pairChoice: [],
     winArray: [],
+    isWinner: false
   }),
   //getters
   //actions
@@ -62,8 +64,12 @@ export const useMemoryStore = defineStore('memory', {
                this.pairChoice = [card]
             }else{
                if(this.pairChoice[0].value == card.value){
-                  this.winArray.push(...arguments, this.pairChoice[0], this.pairChoice[1])
+                  this.winArray.push(this.pairChoice[0], this.pairChoice[1])
                   this.pairChoice= []
+
+                  if(this.winArray.length == 6){
+                     this.isWinner = true
+                  }
                }else{
                   this.pairChoice.push(card)
                }

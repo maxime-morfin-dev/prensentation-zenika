@@ -5,7 +5,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "strict": false,
+    "strictNullChecks": true
   },
 
   "references": [
