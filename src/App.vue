@@ -12,6 +12,9 @@ const isMemoryGridShow: Ref<boolean> = ref(false)
 const toggleIsMemoryGridShow: () => boolean = () =>
   (isMemoryGridShow.value = !isMemoryGridShow.value)
 const {isWinner} = storeToRefs(store)
+const resetAll = () => {
+  location.reload()
+}
 </script>
 
 <template>
@@ -40,7 +43,7 @@ const {isWinner} = storeToRefs(store)
       </div>
       <div v-else>
         <button
-        @click="toggleIsMemoryGridShow"
+        @click="resetAll"
         class="m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md w-full"
       >
         Reset !
