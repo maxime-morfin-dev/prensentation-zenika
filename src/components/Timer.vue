@@ -8,9 +8,7 @@
         Start
       </button>
       <button @click="pause" class="bg-red-200 bg-opacity-50 px-2 rounded-sm">Pause</button>
-      <button @click="stopwatch.reset()" class="bg-green-200 bg-opacity-50 px-2 rounded-sm">
-        Reset
-      </button>
+      <button @click="reset" class="bg-green-200 bg-opacity-50 px-2 rounded-sm">Reset</button>
     </div>
   </div>
 </template>
@@ -32,5 +30,9 @@ watch(isTimerRunning, () => {
 const pause = () => {
   stopwatch.pause()
   store.toggleTimerRunning()
+}
+const reset = () => {
+  stopwatch.reset()
+  store.resetWinArray()
 }
 </script>

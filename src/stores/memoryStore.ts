@@ -169,6 +169,13 @@ export const useMemoryStore = defineStore('memory', {
     },
     toggleTimerRunning() {
       this.isTimerRunning = false
+    },
+    resetWinArray() {
+      this.winArray = []
+      this.pairChoice = []
+      this.cards.forEach((card) => {
+        card.show = false
+      })
     }
   }
 })
