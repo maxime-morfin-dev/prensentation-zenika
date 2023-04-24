@@ -11,6 +11,12 @@
       <button @click="reset" class="bg-green-200 bg-opacity-50 px-2 rounded-sm">Reset</button>
     </div>
   </div>
+  <div
+    class="flex items-center justify-center mt-8 text-3xl bg-opacity-50 rounded-md w-12 h-12 mx-auto"
+    :class="wrongPairs < 5 ? `bg-yellow-300` : wrongPairs < 10 ? `bg-orange-300` : `bg-red-300`"
+  >
+    {{ wrongPairs }}
+  </div>
 </template>
 <script setup lang="ts">
 import { useStopwatch } from 'vue-timer-hook'
@@ -23,6 +29,7 @@ const stopwatch = useStopwatch(0, autoStart)
 
 const store = useMemoryStore()
 const { isTimerRunning } = storeToRefs(store)
+const { wrongPairs } = storeToRefs(store)
 watch(isTimerRunning, () => {
   console.log('dans le wathcer')
   isTimerRunning && stopwatch.start()
