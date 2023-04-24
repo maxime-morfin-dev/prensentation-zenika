@@ -5,13 +5,13 @@ import MemoryGrid from './components/MemoryGrid.vue'
 import InformationList from './components/InformationList.vue'
 import { useMemoryStore } from './stores/memoryStore'
 import { storeToRefs } from 'pinia'
-import type InformationListVue from './components/InformationList.vue'
+import Github from './components/icons/Github.vue'
 
 const store = useMemoryStore()
 const isMemoryGridShow: Ref<boolean> = ref(false)
 const toggleIsMemoryGridShow: () => boolean = () =>
   (isMemoryGridShow.value = !isMemoryGridShow.value)
-const {isWinner} = storeToRefs(store)
+const { isWinner } = storeToRefs(store)
 const resetAll = () => {
   location.reload()
 }
@@ -19,16 +19,19 @@ const resetAll = () => {
 
 <template>
   <!-- Desktop -->
-  <header>
-        <h1
-          class="text-2xl font-semibold text-start rounded-md p-8 pl-0 w-full"
-        >
-          Bienvenue sur Maximory ! <span>🚀</span>
-        </h1>
-      </header>
+  <header class="flex items-center">
+    <h1 class="text-2xl font-semibold text-start rounded-md p-8 pl-0 w-full">
+      Bienvenue sur Maximory ! <span>🚀</span>
+    </h1>
+    <div >
+      <a
+        href="https://github.com/maxime-morfin-dev/prensentation-zenika"
+        ><Github /></a
+      >
+    </div>
+  </header>
   <div class="hidden lg:flex gap-8 justify-center items-start">
     <div class="w-1/3">
-      
       <Rules />
       <button
         @click="toggleIsMemoryGridShow"
@@ -43,11 +46,11 @@ const resetAll = () => {
       </div>
       <div v-else>
         <button
-        @click="resetAll"
-        class="m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md w-full"
-      >
-        Reset !
-      </button>
+          @click="resetAll"
+          class="m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md w-full"
+        >
+          Reset !
+        </button>
         <div class="mt-8">
           <InformationList />
         </div>
