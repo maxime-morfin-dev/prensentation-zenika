@@ -6,6 +6,7 @@ import InformationList from './components/InformationList.vue'
 import { useMemoryStore } from './stores/memoryStore'
 import { storeToRefs } from 'pinia'
 import Github from './components/icons/Github.vue'
+import Timer from './components/Timer.vue'
 
 const store = useMemoryStore()
 const isMemoryGridShow: Ref<boolean> = ref(false)
@@ -23,14 +24,11 @@ const resetAll = () => {
     <h1 class="text-2xl font-semibold text-start rounded-md p-8 pl-0 w-full">
       Bienvenue sur Maximory ! <span>🚀</span>
     </h1>
-    <div >
-      <a
-        href="https://github.com/maxime-morfin-dev/prensentation-zenika"
-        ><Github /></a
-      >
+    <div>
+      <a href="https://github.com/maxime-morfin-dev/prensentation-zenika"><Github /></a>
     </div>
   </header>
-  <div class="hidden lg:flex gap-8 justify-center items-start">
+  <div class="hidden lg:flex gap-8 justify-around items-start">
     <div class="w-1/3">
       <Rules />
       <button
@@ -43,6 +41,7 @@ const resetAll = () => {
       <div v-if="!isWinner">
         <!-- <div v-if="isMemoryGridShow" class="text-center mb-8 bg-white bg-opacity-50 px-4 py-1 rounded-sm">Progress bar here</div> -->
         <InformationList />
+        <Timer v-if="isMemoryGridShow" />
       </div>
       <div v-else>
         <button
@@ -62,7 +61,7 @@ const resetAll = () => {
   </div>
 
   <!-- Mobile -->
-  <div class="h-screen flex flex-col lg:hidden">
+  <!-- <div class="h-screen flex flex-col lg:hidden">
     <header>
       <h1 class="text-2xl font-semibold text-center bg-zinc-700 bg-opacity-50 rounded-md py-4 mt-8">
         Bienvenue sur Maximory ! <span>🚀</span>
@@ -70,6 +69,7 @@ const resetAll = () => {
     </header>
     <Rules />
     <InformationList />
+   
     <div v-if="isMemoryGridShow">
       <MemoryGrid />
     </div>
@@ -80,5 +80,5 @@ const resetAll = () => {
     >
       Jouer !
     </button>
-  </div>
+  </div> -->
 </template>
