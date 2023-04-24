@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-full items-center m-auto">
+  <div class="mt-12 flex flex-col justify-center items-center">
     <span class="text-3xl"
       >{{ stopwatch.hours }} : {{ stopwatch.minutes }} : {{ stopwatch.seconds }}</span
     >
@@ -7,9 +7,7 @@
       <button @click="stopwatch.start()" class="bg-sky-200 bg-opacity-50 px-2 rounded-sm">
         Start
       </button>
-      <button @click="stopwatch.pause()" class="bg-red-200 bg-opacity-50 px-2 rounded-sm">
-        Pause
-      </button>
+      <button @click="pause" class="bg-red-200 bg-opacity-50 px-2 rounded-sm">Pause</button>
       <button @click="stopwatch.reset()" class="bg-green-200 bg-opacity-50 px-2 rounded-sm">
         Reset
       </button>
@@ -18,6 +16,21 @@
 </template>
 <script setup lang="ts">
 import { useStopwatch } from 'vue-timer-hook'
+import { useMemoryStore } from '@/stores/memoryStore'
+import { storeToRefs } from 'pinia'
+import { watch } from 'vue'
+
 const autoStart = true
 const stopwatch = useStopwatch(0, autoStart)
+
+const store = useMemoryStore()
+const { isTimerRunning } = storeToRefs(store)
+watch(isTimerRunning, () => {
+  console.log('dans le wathcer')
+  isTimerRunning && stopwatch.start()
+})
+const pause = () => {
+  stopwatch.pause()
+  store.toggleTimerRunning()
+}
 </script>

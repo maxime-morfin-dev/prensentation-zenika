@@ -21,7 +21,7 @@ const resetAll = () => {
 <template>
   <!-- Desktop -->
   <header class="flex items-center">
-    <h1 class="text-2xl font-semibold text-start rounded-md p-8 pl-0 w-full">
+    <h1 class="text-2xl font-semibold text-start rounded-md p-8 pl-0 w-full relative">
       Bienvenue sur Maximory ! <span>🚀</span>
     </h1>
     <div>

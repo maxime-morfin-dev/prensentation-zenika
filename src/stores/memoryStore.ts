@@ -7,6 +7,7 @@ interface State {
   isWinner: boolean
   informations: InformationInterface[] | any[]
   actualInformation: InformationInterface | null
+  isTimerRunning: Boolean
 }
 interface PairChoiceInterface {
   id: number
@@ -123,12 +124,14 @@ export const useMemoryStore = defineStore('memory', {
         show: false
       }
     ],
-    actualInformation: null
+    actualInformation: null,
+    isTimerRunning: true
   }),
   //getters
   //actions
   actions: {
     toggleCardShow(id: number | undefined) {
+      !this.isTimerRunning && (this.isTimerRunning = true)
       if (this.cards.find((card: CardInterface) => card.id == id).show) {
         return
       }
@@ -163,6 +166,9 @@ export const useMemoryStore = defineStore('memory', {
           }
         }
       }
+    },
+    toggleTimerRunning() {
+      this.isTimerRunning = false
     }
   }
 })
