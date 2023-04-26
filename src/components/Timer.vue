@@ -1,6 +1,6 @@
 <template>
   <div class="mt-12 flex flex-col justify-center items-center">
-    <span class="text-3xl"
+    <span id="timer" class="text-3xl"
       >{{ stopwatch.hours }} : {{ stopwatch.minutes }} : {{ stopwatch.seconds }}</span
     >
     <div class="flex gap-2 mt-2">
@@ -12,8 +12,8 @@
     </div>
   </div>
   <div
-    class="flex items-center justify-center mt-8 text-3xl bg-opacity-50 rounded-full w-12 h-12 mx-auto"
-    :class="wrongPairs < 5 ? `bg-yellow-300` : wrongPairs < 10 ? `bg-orange-300` : `bg-red-300`"
+    class="flex items-center justify-center mt-8 text-3xl bg-opacity-30 rounded-2xl w-12 h-12 mx-auto"
+    :class="wrongPairs < 5 ? `bg-transparent` : wrongPairs < 10 ? `bg-orange-300` : `bg-red-300`"
   >
     {{ wrongPairs }}
   </div>

@@ -24,8 +24,16 @@ const resetAll = () => {
     <h1 class="text-2xl font-semibold text-start p-8 pl-0 w-full relative">
       Bienvenue sur Maximory ! <span>🚀</span>
     </h1>
-    <div>
-      <a href="https://github.com/maxime-morfin-dev/prensentation-zenika"><Github /></a>
+    <div class="relative">
+      <div class="absolute -top-1 -left-1 z-10">
+        <span class="relative flex h-2 w-2">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-700 opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+        </span>
+      </div>
+      <a href="https://github.com/maxime-morfin-dev/prensentation-zenika" class=""><Github /></a>
     </div>
   </header>
   <div class="hidden lg:flex gap-8 justify-around items-start">
@@ -33,7 +41,7 @@ const resetAll = () => {
       <Rules />
       <button
         @click="toggleIsMemoryGridShow"
-        class="m-auto block text-center bg-emerald-300 bg-opacity-50 p-4 rounded-sm w-full"
+        class="m-auto block text-center bg-emerald-300 bg-opacity-50 p-4 rounded-sm w-full animate-pulse"
         v-show="!isMemoryGridShow"
       >
         Jouer !

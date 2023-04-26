@@ -11,3 +11,7 @@
   max-height: 100vh;
   font-weight: normal;
 }
+
+#timer {
+  font-family: monospace;
+}
