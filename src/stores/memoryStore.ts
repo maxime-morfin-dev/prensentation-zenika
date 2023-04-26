@@ -161,6 +161,7 @@ export const useMemoryStore = defineStore('memory', {
               (info) => info.id === this.pairChoice[0].informationId
             )
             this.pairChoice = []
+            this.isTimerRunning = false
             if (this.winArray.length == 16) {
               this.isWinner = true
             }

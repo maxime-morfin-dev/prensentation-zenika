@@ -30,9 +30,10 @@ const stopwatch = useStopwatch(0, autoStart)
 const store = useMemoryStore()
 const { isTimerRunning } = storeToRefs(store)
 const { wrongPairs } = storeToRefs(store)
-watch(isTimerRunning, () => {
+watch(isTimerRunning, (newTimer, oldTimer) => {
   console.log('dans le wathcer')
-  isTimerRunning && stopwatch.start()
+  !oldTimer && stopwatch.start()
+  oldTimer && stopwatch.pause()
 })
 const pause = () => {
   stopwatch.pause()
