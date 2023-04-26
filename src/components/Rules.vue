@@ -1,27 +1,30 @@
 <template>
   <div
     @click="toggleRulesOpen"
-    class="my-8 p-4 bg-zinc-700 bg-opacity-50 rounded-sm cursor-pointer"
+    class="my-8 p-4 bg-zinc-700 bg-opacity-50 rounded-sm cursor-pointer transition-all ease-linear"
+    :class="!isRulesOpen ? `h-16` : `h-72`"
   >
     <h2 class="font-semibold flex gap-1 items-center justify-start text-lg">
       Règles du jeu <span v-if="!isRulesOpen"><ArrowDown /></span><span v-else><ArrowUp /></span>
     </h2>
-    <div v-show="isRulesOpen" class="mt-4">
-      <p>Les règles sont <span class="font-bold">simples </span> 🎯:</p>
-      <p>
-        Parmis toutes ces cartes retournées se trouves des
-        <span class="font-bold">paires identiques 👯‍♀️</span>
-      </p>
-      <p>
-        L'idée est de trouver chaque paire qui vous donnera une
-        <span class="font-bold">information sur moi 🙋‍♂️</span>
-      </p>
-      <p>
-        A une fois toutes <span class="font-bold">les paires trouvées</span> vous saurez tout ou
-        presque sur moi 🍾!
-      </p>
-      <p><span class="font-bold">⚠️ Attention</span> Le chrono démarre au clic du bouton ⏱️</p>
-    </div>
+    <Transition>
+      <div v-show="isRulesOpen" class="mt-4">
+        <p>Les règles sont <span class="font-bold">simples </span> 🎯:</p>
+        <p>
+          Parmis toutes ces cartes retournées se trouves des
+          <span class="font-bold">paires identiques 👯‍♀️</span>
+        </p>
+        <p>
+          L'idée est de trouver chaque paire qui vous donnera une
+          <span class="font-bold">information sur moi 🙋‍♂️</span>
+        </p>
+        <p>
+          A une fois toutes <span class="font-bold">les paires trouvées</span> vous saurez tout ou
+          presque sur moi 🍾!
+        </p>
+        <p><span class="font-bold">⚠️ Attention</span> Le chrono démarre au clic du bouton ⏱️</p>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -33,3 +36,16 @@ import { ref, type Ref } from 'vue'
 const isRulesOpen: Ref<boolean> = ref(false)
 const toggleRulesOpen: () => boolean = () => (isRulesOpen.value = !isRulesOpen.value)
 </script>
+<style>
+.v-enter-active {
+  transition: opacity 0.5s ease-in;
+}
+.v-leave-active {
+  transition: opacity 0.1s ease-out;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
