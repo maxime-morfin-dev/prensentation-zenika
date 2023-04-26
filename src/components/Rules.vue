@@ -1,7 +1,7 @@
 <template>
   <div
     @click="toggleRulesOpen"
-    class="my-8 p-4 bg-zinc-700 bg-opacity-50 rounded-md cursor-pointer"
+    class="my-8 p-4 bg-zinc-700 bg-opacity-50 rounded-sm cursor-pointer"
   >
     <h2 class="font-semibold flex gap-1 items-center justify-start text-lg">
       Règles du jeu <span v-if="!isRulesOpen"><ArrowDown /></span><span v-else><ArrowUp /></span>

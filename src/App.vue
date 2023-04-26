@@ -21,7 +21,7 @@ const resetAll = () => {
 <template>
   <!-- Desktop -->
   <header class="flex items-center">
-    <h1 class="text-2xl font-semibold text-start rounded-md p-8 pl-0 w-full relative">
+    <h1 class="text-2xl font-semibold text-start p-8 pl-0 w-full relative">
       Bienvenue sur Maximory ! <span>🚀</span>
     </h1>
     <div>
@@ -33,7 +33,7 @@ const resetAll = () => {
       <Rules />
       <button
         @click="toggleIsMemoryGridShow"
-        class="m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md w-full"
+        class="m-auto block text-center bg-emerald-300 bg-opacity-50 p-4 rounded-sm w-full"
         v-show="!isMemoryGridShow"
       >
         Jouer !
@@ -46,7 +46,7 @@ const resetAll = () => {
       <div v-else>
         <button
           @click="resetAll"
-          class="m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md w-full"
+          class="m-auto block text-center bg-emerald-300 bg-opacity-50 p-4 rounded-sm w-full"
         >
           Reset !
         </button>
@@ -75,7 +75,7 @@ const resetAll = () => {
     </div>
     <button
       @click="toggleIsMemoryGridShow"
-      class="m-auto block text-center bg-sky-300 bg-opacity-50 p-4 rounded-md"
+      class="m-auto block text-center bg-emerald-300 bg-opacity-50 p-4 rounded-md"
       v-else
     >
       Jouer !
