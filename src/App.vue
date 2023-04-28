@@ -69,24 +69,17 @@ const resetAll = () => {
   </div>
 
   <!-- Mobile -->
-  <!-- <div class="h-screen flex flex-col lg:hidden">
-    <header>
-      <h1 class="text-2xl font-semibold text-center bg-zinc-700 bg-opacity-50 rounded-md py-4 mt-8">
-        Bienvenue sur Maximory ! <span>🚀</span>
-      </h1>
-    </header>
-    <Rules />
-    <InformationList />
-   
-    <div v-if="isMemoryGridShow">
-      <MemoryGrid />
-    </div>
-    <button
-      @click="toggleIsMemoryGridShow"
-      class="m-auto block text-center bg-emerald-300 bg-opacity-50 p-4 rounded-md"
-      v-else
+  <div class="h-screen flex flex-col lg:hidden">
+    <div
+      class="text-center bg-zinc-700 bg-opacity-50 p-4 rounded-sm flex flex-col justify-center items-center my-8"
     >
-      Jouer !
-    </button>
-  </div> -->
+      <span>😅</span>
+      Pour une meilleure experience utilisateur
+      <span class="line-through italic bg-white bg-opacity-50 rounded-sm p-1"
+        >(et pas du tout par flemme)</span
+      >
+      le jeux n'est disponible qu'en format desktop !
+    </div>
+    <p class="my-8 text-sm text-center text-opacity-50 italic">Promis c'est mieux vraiment ...</p>
+  </div>
 </template>
