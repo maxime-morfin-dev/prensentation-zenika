@@ -6,7 +6,7 @@
   </div>
   <div v-else>
     <div class="absolute top-1/2 left-1/2">
-      <ConfettiExplosion :="" />
+      <ConfettiExplosion :particleCount="50" :="" />
     </div>
     <h2
       class="flex flex-col gap-4 m-auto text-xl text-center mt-24 uppercase font-semibold my-auto"
