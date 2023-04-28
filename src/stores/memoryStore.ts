@@ -26,6 +26,8 @@ interface CardInterface {
   value: string
   show: boolean
   informationId: number
+  source: string
+  alt: string
 }
 
 interface InformationInterface {
@@ -39,22 +41,132 @@ export const useMemoryStore = defineStore('memory', {
   //state
   state: (): State => ({
     cards: [
-      { id: 0, value: '🧑‍🚒', show: false, informationId: 0 },
-      { id: 1, value: '🧑‍🚒', show: false, informationId: 0 },
-      { id: 2, value: '🇷🇪', show: false, informationId: 1 },
-      { id: 3, value: '🇷🇪', show: false, informationId: 1 },
-      { id: 4, value: '🛣️', show: false, informationId: 2 },
-      { id: 5, value: '🛣️', show: false, informationId: 2 },
-      { id: 6, value: '♥️', show: false, informationId: 3 },
-      { id: 7, value: '♥️', show: false, informationId: 3 },
-      { id: 8, value: '👴🏻', show: false, informationId: 4 },
-      { id: 9, value: '👴🏻', show: false, informationId: 4 },
-      { id: 10, value: '🤓', show: false, informationId: 5 },
-      { id: 11, value: '🤓', show: false, informationId: 5 },
-      { id: 12, value: '🧗‍♂️', show: false, informationId: 6 },
-      { id: 13, value: '🧗‍♂️', show: false, informationId: 6 },
-      { id: 14, value: '🎸', show: false, informationId: 7 },
-      { id: 15, value: '🎸', show: false, informationId: 7 }
+      {
+        id: 0,
+        value: '🧑‍🚒',
+        show: false,
+        informationId: 0,
+        source: '/images/pompier.svg',
+        alt: "image d'un pompier"
+      },
+      {
+        id: 1,
+        value: '🧑‍🚒',
+        show: false,
+        informationId: 0,
+        source: '/images/pompier.svg',
+        alt: "image d'un pompier"
+      },
+      {
+        id: 2,
+        value: '🇷🇪',
+        show: false,
+        informationId: 1,
+        source: '/images/run.svg',
+        alt: 'image de la reunion'
+      },
+      {
+        id: 3,
+        value: '🇷🇪',
+        show: false,
+        informationId: 1,
+        source: '/images/run.svg',
+        alt: 'image de la reunion'
+      },
+      {
+        id: 4,
+        value: '🛣️',
+        show: false,
+        informationId: 2,
+        source: '/images/roadtrip.svg',
+        alt: 'image de caravane'
+      },
+      {
+        id: 5,
+        value: '🛣️',
+        show: false,
+        informationId: 2,
+        source: '/images/roadtrip.svg',
+        alt: 'image de caravane'
+      },
+      {
+        id: 6,
+        value: '♥️',
+        show: false,
+        informationId: 3,
+        source: '/images/amour.svg',
+        alt: 'image de coeur'
+      },
+      {
+        id: 7,
+        value: '♥️',
+        show: false,
+        informationId: 3,
+        source: '/images/amour.svg',
+        alt: 'image de coeur'
+      },
+      {
+        id: 8,
+        value: '👴🏻',
+        show: false,
+        informationId: 4,
+        source: '/images/carsat.svg',
+        alt: "image d'un batiment representant la carsat"
+      },
+      {
+        id: 9,
+        value: '👴🏻',
+        show: false,
+        informationId: 4,
+        source: '/images/carsat.svg',
+        alt: "image d'un batiment representant la carsat"
+      },
+      {
+        id: 10,
+        value: '🤓',
+        show: false,
+        informationId: 5,
+        source: '/images/jeux.svg'
+      },
+      {
+        id: 11,
+        value: '🤓',
+        show: false,
+        informationId: 5,
+        source: '/images/jeux.svg'
+      },
+      {
+        id: 12,
+        value: '🧗‍♂️',
+        show: false,
+        informationId: 6,
+        source: '/images/sport.svg',
+        alt: "image de chaussons d'escalade"
+      },
+      {
+        id: 13,
+        value: '🧗‍♂️',
+        show: false,
+        informationId: 6,
+        source: '/images/sport.svg',
+        alt: "image de chaussons d'escalade"
+      },
+      {
+        id: 14,
+        value: '🎸',
+        show: false,
+        informationId: 7,
+        source: '/images/musique.svg',
+        alt: 'image de guitare'
+      },
+      {
+        id: 15,
+        value: '🎸',
+        show: false,
+        informationId: 7,
+        source: '/images/musique.svg',
+        alt: 'image de guitare'
+      }
     ],
     pairChoice: [],
     winArray: [],
@@ -65,7 +177,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🧑‍🚒',
         key: 'pompier',
         value:
-          "J'ai été pompier volontaire pendant 8 ans au CIS de Meyrargues dans le sud de la France.",
+          "J'ai été pompier volontaire pendant 8 ans au CIS de Meyrargues dans le sud de la France. Etant rentrer chez les pompier a mes 19 ans une partie de mon éducation c'est faite la bas. J'y y ai appris beaucoup de principe et de valeurs que je garde encore aujourd'hui",
         show: false
       },
       {
@@ -73,7 +185,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🇷🇪',
         key: 'reunion',
         value:
-          "J'ai vécu toute mon enfance a l'île de la Réunion. J'ai quitter l'île pour mes études et je ne suis toujours pas retourner depuis. J'en garde mes meilleurs souvenir et mes meilleurs amis",
+          "J'ai vécu toute mon adolescence a l'île de la Réunion. J'ai quitté l'île pour mes études et je ne suis toujours pas retourner depuis. J'en garde mes meilleurs souvenir et mes meilleurs amis",
         show: false
       },
       {
@@ -81,7 +193,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🛣️',
         key: 'roadtrip',
         value:
-          "J'ai eu l'occasion de faire un roadtrip de 6 mois en 2022 en Caravane. C'était une experience incroyable avec des hauts et des bas, et pleins de rencontre et de souvenir géniaux",
+          "J'ai eu l'occasion de faire un roadtrip de 6 mois en 2022 en Caravane. C'était une experience incroyable avec des hauts et des bas, et pleins de rencontre et de souvenir géniaux ! C'est a la suite de ce roadtrip que nous sommes venue ma compagne mon chat et moi même nous installer a Brest",
         show: false
       },
       {
@@ -89,7 +201,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '♥️',
         key: 'love',
         value:
-          "Je suis pacsé avec Sandra , un caractère bien trempé et toujours prête pour l'aventure ! Fun fact : elle a vécu à la Réunion aussi ! On vie ensemble avec notre petit chat Gaia !",
+          "Je suis pacsé avec Sandra , un caractère bien trempé et toujours prête pour l'aventure ! Ostéopathe et illustratrice (c'est elle qui a fait les icône que vous voyez) elle me sort constament de ma zone de confort et c'est génial. Fun fact : elle a vécu à la Réunion aussi ! On vie ensemble avec notre petit chat Gaia !",
         show: false
       },
       {
@@ -97,7 +209,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '👴🏻',
         key: 'carsat',
         value:
-          "J'ai passé une grosse partie de ma carrière de développeur a la Carsat a Marseille. Ce fut une bonne experience mais je me sentais un peu bloqué en terme de progression c'est en partie pour ça que je suis partie. J'y est tout de même rencontré des très bons amis !",
+          "J'ai passé une grosse partie de ma carrière de développeur a la Carsat a Marseille. Ce fut une bonne experience mais je me sentais un peu bloqué en terme de progression c'est en partie pour ça que je suis partie. J'y est tout de même rencontré des très bons amis ! Avant j'ai été Responsable de salle dans un restaurant , étudian et pompier volontaire",
         show: false
       },
       {
@@ -105,7 +217,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🤓',
         key: 'geek',
         value:
-          "J'ai été pendant très longtemps (toujours un peu quand j'ai le temps), un joueur world of warcraft, j'ai arrêter quand le jeux a commencé a s'éloigner un peu trop pour moi de la version vanilla ... ",
+          "J'ai été pendant très longtemps (toujours un peu quand j'ai le temps), un joueur world of warcraft, j'ai arrêter quand le jeux a commencé a s'éloigner un peu trop pour moi de la version vanilla ... Je me suis rabatu depuis quelques années sur les jeux de sociétés et la switch",
         show: false
       },
       {
@@ -113,7 +225,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🧗‍♂️',
         key: 'sport',
         value:
-          "J'adore le sport de manière générale, j'aime essayer différent sport en ce moment je fais de l'escalade et de l'aviron en mer. J'ai également fait durant mes années pompier beaucoup de 'street workout' (musculation au poid du corp)",
+          "J'adore le sport de manière générale, j'aime essayer différent sport en ce moment je fais de l'escalade et de l'aviron en mer. J'ai également fait durant mes années pompier beaucoup de 'street workout' et de la course a pied (musculation au poid du corp).",
         show: false
       },
       {
@@ -121,7 +233,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🎸',
         key: 'musique',
         value:
-          "Metallica, Metallica, Metallica , Metallica ... what else ?  En vrai j'aime surtout le rock / metal j'aime la musique de manière général : electro chill , slam, rap fr (le tranquille pas le enerver) et la vieille musique française",
+          "Metallica, Metallica, Metallica , Metallica ... what else ?  En vrai j'aime surtout le rock / metal mais j'aime la musique de manière général : electro chill , slam, rap fr (le tranquille pas le enerver) et la vieille musique française",
         show: false
       }
     ],
