@@ -1,9 +1,9 @@
 <template>
-  <div v-if="!store.isWinner" class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-2 my-8 mx-auto">
-      <div  v-for="(card) in cards.sort(() => 0.5 - Math.random())" :key="card.id">
-         <MemoryCard :id="card.id"/>
-      </div>
-   </div>
+  <div v-if="!store.isWinner" class="grid grid-cols-4 gap-2 mx-auto">
+    <div v-for="card in cards.sort(() => 0.5 - Math.random())" :key="card.id">
+      <MemoryCard :id="card.id" />
+    </div>
+  </div>
   <div v-else>
     <div class="absolute top-1/2 left-1/2">
       <ConfettiExplosion :="" />

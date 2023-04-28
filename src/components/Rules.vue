@@ -1,14 +1,13 @@
 <template>
   <div
     @click="toggleRulesOpen"
-    class="my-8 p-4 bg-zinc-700 bg-opacity-50 rounded-sm cursor-pointer transition-all ease-linear"
-    :class="!isRulesOpen ? `h-16` : `h-80`"
+    class="my-8 p-4 bg-zinc-700 bg-opacity-50 rounded-sm cursor-pointer overflow-hidden flex flex-col justify-center items-start"
   >
     <h2 class="font-semibold flex gap-1 items-center justify-start text-lg">
       Règles du jeu <span v-if="!isRulesOpen"><ArrowDown /></span><span v-else><ArrowUp /></span>
     </h2>
     <Transition>
-      <div v-show="isRulesOpen" class="mt-4">
+      <div v-show="isRulesOpen" class="h-full">
         <p>Les règles sont <span class="font-bold">simples </span> 🎯:</p>
         <p>
           Parmis toutes ces cartes retournées se trouves des
@@ -37,15 +36,15 @@ const isRulesOpen: Ref<boolean> = ref(false)
 const toggleRulesOpen: () => boolean = () => (isRulesOpen.value = !isRulesOpen.value)
 </script>
 <style>
-.v-enter-active {
-  transition: opacity 0.5s ease-in;
-}
+.v-enter-active,
 .v-leave-active {
-  transition: opacity 0.1s ease-out;
+  transition: all 1s ease;
+  max-height: 300px;
 }
 
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+  max-height: 0px;
 }
 </style>
