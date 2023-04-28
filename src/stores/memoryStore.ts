@@ -177,7 +177,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🧑‍🚒',
         key: 'pompier',
         value:
-          "J'ai été pompier volontaire pendant 8 ans au CIS de Meyrargues dans le sud de la France. Etant rentrer chez les pompier a mes 19 ans une partie de mon éducation c'est faite la bas. J'y y ai appris beaucoup de principe et de valeurs que je garde encore aujourd'hui",
+          "J'ai été pompier volontaire pendant 8 ans au Centre d'Incendie et de Secours de Meyrargues, dans le sud de la France. En rejoignant les pompiers à l'âge de 19 ans, une partie de mon éducation s'est faite là-bas. J'ai appris de nombreux principes et valeurs qui sont encore ancrés en moi aujourd'hui.",
         show: false
       },
       {
@@ -185,7 +185,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🇷🇪',
         key: 'reunion',
         value:
-          "J'ai vécu toute mon adolescence a l'île de la Réunion. J'ai quitté l'île pour mes études et je ne suis toujours pas retourner depuis. J'en garde mes meilleurs souvenir et mes meilleurs amis",
+          "J'ai passé toute mon adolescence à l'île de la Réunion. J'ai quitté l'île pour poursuivre mes études et je n'y suis toujours pas retourné depuis. Mes meilleurs souvenir proviennent de mon temps passé là-bas ainsi que mes meilleurs amis.",
         show: false
       },
       {
@@ -193,7 +193,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🛣️',
         key: 'roadtrip',
         value:
-          "J'ai eu l'occasion de faire un roadtrip de 6 mois en 2022 en Caravane. C'était une experience incroyable avec des hauts et des bas, et pleins de rencontre et de souvenir géniaux ! C'est a la suite de ce roadtrip que nous sommes venue ma compagne mon chat et moi même nous installer a Brest",
+          "En 2022, j'ai eu l'opportunité de partir en roadtrip pendant six mois en caravane. Cette expérience a été incroyable, avec ses hauts et ses bas, ainsi que de nombreuses rencontres et souvenirs géniaux. Suite à ce roadtrip, ma compagne, mon chat et moi avons décidé de nous installer à Brest.",
         show: false
       },
       {
@@ -201,7 +201,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '♥️',
         key: 'love',
         value:
-          "Je suis pacsé avec Sandra , un caractère bien trempé et toujours prête pour l'aventure ! Ostéopathe et illustratrice (c'est elle qui a fait les icône que vous voyez) elle me sort constament de ma zone de confort et c'est génial. Fun fact : elle a vécu à la Réunion aussi ! On vie ensemble avec notre petit chat Gaia !",
+          "Je suis pacsé(e) avec Sandra, une femme au caractère bien trempé et toujours prête pour l'aventure ! Elle est ostéopathe et illustratrice (c'est elle qui a réalisé les icônes que vous pouvez voir). Elle me pousse constamment hors de ma zone de confort, ce qui est génial. Petit fait amusant : elle a également vécu à la Réunion ! Nous vivons ensemble avec notre petit chat Gaia !",
         show: false
       },
       {
@@ -209,7 +209,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '👴🏻',
         key: 'carsat',
         value:
-          "J'ai passé une grosse partie de ma carrière de développeur a la Carsat a Marseille. Ce fut une bonne experience mais je me sentais un peu bloqué en terme de progression c'est en partie pour ça que je suis partie. J'y est tout de même rencontré des très bons amis ! Avant j'ai été Responsable de salle dans un restaurant , étudian et pompier volontaire",
+          "J'ai consacré une grande partie de ma carrière de développeur à la Carsat à Marseille. Bien que ce fût une bonne expérience, j'avais le sentiment d'être bloqué en termes de progression, c'est donc en partie pour cette raison que j'ai décidé de partir. Néanmoins, j'y ai rencontré de très bons amis et acquis une bonne méthode de travail ! Auparavant, j'ai pu être freelance, responsable de salle dans un restaurant, étudiant entre autres.",
         show: false
       },
       {
@@ -217,7 +217,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🤓',
         key: 'geek',
         value:
-          "J'ai été pendant très longtemps (toujours un peu quand j'ai le temps), un joueur world of warcraft, j'ai arrêter quand le jeux a commencé a s'éloigner un peu trop pour moi de la version vanilla ... Je me suis rabatu depuis quelques années sur les jeux de sociétés et la switch",
+          "Pendant très longtemps (et encore un peu aujourd'hui quand j'ai le temps), j'ai été un joueur de World of Warcraft. J'ai finalement arrêté de jouer lorsque le jeu a commencé à s'éloigner un peu trop de la version vanilla pour moi. Depuis quelques années, je me suis tourné vers les jeux de société et la Switch pour assouvir ma passion des jeux (de rôle principalement).",
         show: false
       },
       {
@@ -225,7 +225,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🧗‍♂️',
         key: 'sport',
         value:
-          "J'adore le sport de manière générale, j'aime essayer différent sport en ce moment je fais de l'escalade et de l'aviron en mer. J'ai également fait durant mes années pompier beaucoup de 'street workout' et de la course a pied (musculation au poid du corp).",
+          "J'adore le sport de manière générale et j'aime essayer différents sports. En ce moment, je pratique l'escalade et l'aviron en mer. Pendant plusieurs années, j'ai également pratiqué beaucoup de street workout, (muscu avec le poids du corps) et de course à pied .",
         show: false
       },
       {
@@ -233,7 +233,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🎸',
         key: 'musique',
         value:
-          "Metallica, Metallica, Metallica , Metallica ... what else ?  En vrai j'aime surtout le rock / metal mais j'aime la musique de manière général : electro chill , slam, rap fr (le tranquille pas le enerver) et la vieille musique française",
+          "Metallica, Metallica, Metallica, Metallica... Que demander de plus ? En réalité, j'apprécie surtout le rock/metal, mais j'aime la musique en général, que ce soit l'électro chill, le slam, le rap français (plutôt tranquille que énervé) et même la vieille musique française. (Qui es chaud pour un blind test ?)",
         show: false
       }
     ],
