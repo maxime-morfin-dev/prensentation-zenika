@@ -6,7 +6,7 @@ import InformationList from './components/InformationList.vue'
 import { useMemoryStore } from './stores/memoryStore'
 import { storeToRefs } from 'pinia'
 import Github from './components/icons/Github.vue'
-// import Timer from './components/Timer.vue'
+import Timer from './components/Timer.vue'
 
 const store = useMemoryStore()
 const isMemoryGridShow: Ref<boolean> = ref(false)

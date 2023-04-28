@@ -14,7 +14,8 @@
   "dependencies": {
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
-    "vue-confetti-explosion": "^1.0.2"
+    "vue-confetti-explosion": "^1.0.2",
+    "vue-timer-hook": "^1.0.76"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
