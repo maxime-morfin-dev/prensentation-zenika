@@ -36,7 +36,9 @@ const resetAll = () => {
       <a href="https://github.com/maxime-morfin-dev/prensentation-zenika" class=""><Github /></a>
     </div>
   </header>
-  <div class="flex gap-8 justify-around items-start transition-all ease-in-out duration-1000">
+  <div
+    class="hidden lg:flex gap-8 justify-around items-start transition-all ease-in-out duration-1000"
+  >
     <div class="w-1/3">
       <Rules />
       <button
@@ -77,9 +79,7 @@ const resetAll = () => {
     >
       <span>😅</span>
       Pour une meilleure experience utilisateur
-      <span class="line-through italic bg-white bg-opacity-50 rounded-sm p-1"
-        >(et pas du tout par flemme)</span
-      >
+      <span class="line-through italic text-xs p-1">(et pas du tout par flemme)</span>
       le jeux n'est disponible qu'en format desktop !
     </div>
     <p class="my-8 text-sm text-center text-opacity-50 italic">Promis c'est mieux vraiment ...</p>
