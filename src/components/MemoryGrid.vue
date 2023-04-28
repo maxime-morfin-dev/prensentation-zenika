@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!store.isWinner" class="grid grid-cols-4 gap-2 mx-auto">
+  <div v-if="!store.isWinner" class="grid grid-cols-4 gap-2 mx-auto bg-transparent">
     <div v-for="card in cards" :key="card.id">
       <MemoryCard :id="card.id" />
     </div>

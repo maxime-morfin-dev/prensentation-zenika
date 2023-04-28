@@ -12,7 +12,7 @@
     </div>
   </div>
   <div
-    class="flex items-center justify-center mt-8 text-3xl bg-opacity-30 rounded-2xl w-12 h-12 mx-auto"
+    class="flex items-center justify-center mt-8 text-3xl bg-opacity-30 rounded-sm w-12 h-12 mx-auto"
     :class="wrongPairs < 5 ? `bg-transparent` : wrongPairs < 10 ? `bg-orange-300` : `bg-red-300`"
   >
     {{ wrongPairs }}
