@@ -36,7 +36,7 @@ const resetAll = () => {
       <a href="https://github.com/maxime-morfin-dev/prensentation-zenika" class=""><Github /></a>
     </div>
   </header>
-  <div class="hidden lg:flex gap-8 justify-around items-start">
+  <div class="flex gap-8 justify-around items-start transition-all ease-in-out duration-1000">
     <div class="w-1/3">
       <Rules />
       <button
@@ -63,9 +63,11 @@ const resetAll = () => {
         </div>
       </div>
     </div>
-    <div v-show="isMemoryGridShow" class="w-full">
-      <MemoryGrid />
-    </div>
+    <Transition>
+      <div v-show="isMemoryGridShow" class="w-full">
+        <MemoryGrid />
+      </div>
+    </Transition>
   </div>
 
   <!-- Mobile -->
@@ -83,3 +85,14 @@ const resetAll = () => {
     <p class="my-8 text-sm text-center text-opacity-50 italic">Promis c'est mieux vraiment ...</p>
   </div>
 </template>
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: all 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
