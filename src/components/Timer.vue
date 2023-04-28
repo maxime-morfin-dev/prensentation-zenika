@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="mt-12 flex flex-col justify-center items-center">
     <span id="timer" class="text-3xl"
       >{{ stopwatch.hours }} : {{ stopwatch.minutes }} : {{ stopwatch.seconds }}</span
@@ -43,4 +43,4 @@ const reset = () => {
   stopwatch.reset()
   store.resetWinArray()
 }
-</script>
+</script> -->
