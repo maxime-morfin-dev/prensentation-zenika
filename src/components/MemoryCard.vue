@@ -7,7 +7,11 @@
     <div
       v-else
       class="bg-opacity-50 p-4 h-32 w-full rounded-sm flex items-center justify-center"
-      :class="pairChoice.length == 2 ? `bg-red-300` : `bg-emerald-300`"
+      :class="
+        pairChoice.length == 2 && pairChoice.includes(cards.find((card) => card.id == id))
+          ? `bg-red-300`
+          : `bg-emerald-300`
+      "
     >
       {{ cards.find((card) => card.id == id).value }}
     </div>
