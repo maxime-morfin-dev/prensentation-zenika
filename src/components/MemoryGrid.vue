@@ -1,6 +1,6 @@
 <template>
   <div v-if="!store.isWinner" class="grid grid-cols-4 gap-2 mx-auto">
-    <div v-for="card in cards.sort(() => 0.5 - Math.random())" :key="card.id">
+    <div v-for="card in cards" :key="card.id">
       <MemoryCard :id="card.id" />
     </div>
   </div>
@@ -24,4 +24,5 @@ import ConfettiExplosion from 'vue-confetti-explosion'
 
 const store = useMemoryStore()
 const { cards } = storeToRefs(store)
+cards.value = cards.value.sort(() => 0.5 - Math.random())
 </script>
