@@ -49,7 +49,7 @@ const resetAll = () => {
       <div v-if="!isWinner">
         <!-- <div v-if="isMemoryGridShow" class="text-center mb-8 bg-white bg-opacity-50 px-4 py-1 rounded-sm">Progress bar here</div> -->
         <InformationList />
-        <Timer v-if="isMemoryGridShow" />
+        <!-- <Timer v-if="isMemoryGridShow" /> -->
       </div>
       <div v-else>
         <button
