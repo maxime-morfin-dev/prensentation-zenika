@@ -7,6 +7,7 @@
     </Transition>
   </div>
 </template>
+
 <script setup lang="ts">
 import { useMemoryStore } from '@/stores/memoryStore'
 import { storeToRefs } from 'pinia'
@@ -15,6 +16,7 @@ import InformationCard from './InformationCard.vue'
 const store = useMemoryStore()
 const { actualInformation } = storeToRefs(store)
 </script>
+
 <style>
 .v-enter-active,
 .v-leave-active {

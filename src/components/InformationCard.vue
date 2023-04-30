@@ -11,6 +11,7 @@
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { useMemoryStore } from '@/stores/memoryStore'

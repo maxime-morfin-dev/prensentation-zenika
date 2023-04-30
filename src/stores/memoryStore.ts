@@ -1,46 +1,7 @@
 import { defineStore } from 'pinia'
-import type { ResUseStopwatch } from 'vue-timer-hook'
-
-interface State {
-  cards: CardInterface[] | any[]
-  pairChoice: PairChoiceInterface[] | any[]
-  winArray: WinArrayInterface[] | any[]
-  isWinner: boolean
-  informations: InformationInterface[] | any[]
-  actualInformation: InformationInterface | null
-  isTimerRunning: boolean
-  wrongPairs: number
-  totalTimer: ResUseStopwatch | null
-}
-interface PairChoiceInterface {
-  id: number
-  value: string
-  show: boolean
-  informationId: number
-}
-interface WinArrayInterface {
-  id: number
-  value: string
-  show: boolean
-}
-interface CardInterface {
-  id: number
-  value: string
-  show: boolean
-  informationId: number
-  source: string
-  alt: string
-}
-
-interface InformationInterface {
-  id: number
-  icone: string
-  value: string
-  show: boolean
-}
+import type { State, CardInterface } from './memoryStoreInterface'
 
 export const useMemoryStore = defineStore('memory', {
-  //state
   state: (): State => ({
     cards: [
       {
@@ -170,9 +131,6 @@ export const useMemoryStore = defineStore('memory', {
         alt: 'image de guitare'
       }
     ],
-    pairChoice: [],
-    winArray: [],
-    isWinner: false,
     informations: [
       {
         id: 0,
@@ -239,13 +197,14 @@ export const useMemoryStore = defineStore('memory', {
         show: false
       }
     ],
+    pairChoice: [],
+    winArray: [],
     actualInformation: null,
+    isWinner: false,
     isTimerRunning: true,
     wrongPairs: 0,
     totalTimer: null
   }),
-  //getters
-  //actions
   actions: {
     toggleCardShow(id: number | undefined) {
       !this.isTimerRunning && (this.isTimerRunning = true)

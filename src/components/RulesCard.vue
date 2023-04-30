@@ -4,7 +4,10 @@
     class="mb-8 p-4 bg-zinc-700 bg-opacity-50 rounded-sm cursor-pointer overflow-hidden flex flex-col justify-center items-start"
   >
     <h2 class="font-semibold flex gap-1 items-center justify-start text-lg">
-      Règles du jeu <span v-if="!isRulesOpen"><ArrowDown /></span><span v-else><ArrowUp /></span>
+      Règles du jeu
+      <Transition mode="out-in">
+        <span v-if="!isRulesOpen"><ArrowDown /></span><span v-else><ArrowUp /></span>
+      </Transition>
     </h2>
     <Transition>
       <div v-show="isRulesOpen" class="h-full">
@@ -35,7 +38,7 @@
 <script setup lang="ts">
 import ArrowDown from './icons/ArrowDown.vue'
 import ArrowUp from './icons/ArrowUp.vue'
-import { ref, watch, type Ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useMemoryStore } from '@/stores/memoryStore'
 import { storeToRefs } from 'pinia'
 
@@ -46,13 +49,13 @@ watch(isTimerRunning, () => {
   isRulesOpen.value = false
 })
 
-const isRulesOpen: Ref<boolean> = ref(false)
-const toggleRulesOpen: () => boolean = () => (isRulesOpen.value = !isRulesOpen.value)
+const isRulesOpen = ref(false)
+const toggleRulesOpen = () => (isRulesOpen.value = !isRulesOpen.value)
 </script>
 <style>
 .v-enter-active,
 .v-leave-active {
-  transition: all 1s ease;
+  transition: all 1s ease-in-out;
   max-height: 300px;
 }
 

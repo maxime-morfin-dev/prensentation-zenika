@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { ref, type Ref } from 'vue'
-import Rules from './components/Rules.vue'
-import MemoryGrid from './components/MemoryGrid.vue'
-import InformationList from './components/InformationList.vue'
+import { ref } from 'vue'
 import { useMemoryStore } from './stores/memoryStore'
 import { storeToRefs } from 'pinia'
+
+import Rules from './components/RulesCard.vue'
+import MemoryGrid from './components/MemoryGrid.vue'
+import InformationList from './components/InformationList.vue'
 import Github from './components/icons/Github.vue'
-import Timer from './components/Timer.vue'
+import Timer from './components/TimerDisplay.vue'
 
 const store = useMemoryStore()
-const isMemoryGridShow: Ref<boolean> = ref(false)
-const toggleIsMemoryGridShow: () => boolean = () =>
-  (isMemoryGridShow.value = !isMemoryGridShow.value)
+const isMemoryGridShow = ref(false)
+const toggleIsMemoryGridShow = () => (isMemoryGridShow.value = !isMemoryGridShow.value)
 const { isWinner } = storeToRefs(store)
 const resetAll = () => {
   location.reload()
@@ -49,7 +49,6 @@ const resetAll = () => {
         Jouer !
       </button>
       <div v-if="!isWinner">
-        <!-- <div v-if="isMemoryGridShow" class="text-center mb-8 bg-white bg-opacity-50 px-4 py-1 rounded-sm">Progress bar here</div> -->
         <InformationList />
         <Timer v-if="isMemoryGridShow" />
       </div>
@@ -85,7 +84,7 @@ const resetAll = () => {
     <p class="my-8 text-sm text-center text-opacity-50 italic">Promis c'est mieux vraiment ...</p>
   </div>
 </template>
-<style>
+<style scoped>
 .v-enter-active,
 .v-leave-active {
   transition: all 1s ease;
@@ -94,5 +93,6 @@ const resetAll = () => {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+  transform: translateX(500px);
 }
 </style>

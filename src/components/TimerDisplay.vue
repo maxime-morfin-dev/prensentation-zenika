@@ -1,6 +1,6 @@
 <template>
   <div class="mt-12 flex flex-col justify-center items-center">
-    <span id="timer" class="text-3xl"
+    <span id="timer-a" class="text-3xl"
       >{{ stopwatch.hours }} : {{ stopwatch.minutes }} : {{ stopwatch.seconds }}</span
     >
     <div class="flex gap-2 mt-2">
@@ -28,15 +28,14 @@ const autoStart = true
 const stopwatch = useStopwatch(0, autoStart)
 
 const store = useMemoryStore()
-const { isTimerRunning } = storeToRefs(store)
-const { wrongPairs } = storeToRefs(store)
-const { isWinner } = storeToRefs(store)
-watch(isTimerRunning, (newTimer, oldTimer) => {
+const { isTimerRunning, wrongPairs, isWinner } = storeToRefs(store)
+watch(isTimerRunning, (oldTimer) => {
   if (isWinner && !oldTimer) {
     store.setTotalTimer(stopwatch)
+  } else {
+    !oldTimer && stopwatch.start()
+    oldTimer && stopwatch.pause()
   }
-  !oldTimer && stopwatch.start()
-  oldTimer && stopwatch.pause()
 })
 const pause = () => {
   stopwatch.pause()

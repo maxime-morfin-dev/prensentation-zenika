@@ -40,8 +40,6 @@ import { storeToRefs } from 'pinia'
 import ConfettiExplosion from 'vue-confetti-explosion'
 
 const store = useMemoryStore()
-const { cards } = storeToRefs(store)
-const { wrongPairs } = storeToRefs(store)
-const { totalTimer } = storeToRefs(store)
+const { cards, wrongPairs, totalTimer } = storeToRefs(store)
 cards.value = cards.value.sort(() => 0.5 - Math.random())
 </script>
