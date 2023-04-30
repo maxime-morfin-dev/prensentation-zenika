@@ -10,7 +10,7 @@
       <div v-show="isRulesOpen" class="h-full">
         <p>Les règles sont <span class="font-bold">simples </span> 🎯:</p>
         <p>
-          Parmis toutes ces cartes retournées se trouves des
+          Parmis toutes ces cartes retournées se trouvent des
           <span class="font-bold">paires identiques 👯‍♀️</span>
         </p>
         <p>
@@ -18,10 +18,14 @@
           <span class="font-bold">information sur moi 🙋‍♂️</span>
         </p>
         <p>
-          A une fois toutes <span class="font-bold">les paires trouvées</span> vous saurez tout ou
+          Une fois toutes <span class="font-bold">les paires trouvées</span> vous saurez tout ou
           presque sur moi 🍾!
         </p>
         <p><span class="font-bold">⚠️ Attention</span> Le chrono démarre au clic du bouton ⏱️</p>
+        <p>
+          Il se mettra sur <span class="font-bold">pause automatiquement </span>lorsque vous
+          trouverez un paire pour vous laisser le <span class="font-bold">temps de lire</span>
+        </p>
       </div>
     </Transition>
   </div>
