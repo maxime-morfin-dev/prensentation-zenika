@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import type { ResUseStopwatch } from 'vue-timer-hook'
 
 interface State {
   cards: CardInterface[] | any[]
@@ -9,6 +10,7 @@ interface State {
   actualInformation: InformationInterface | null
   isTimerRunning: boolean
   wrongPairs: number
+  totalTimer: ResUseStopwatch | null
 }
 interface PairChoiceInterface {
   id: number
@@ -239,7 +241,8 @@ export const useMemoryStore = defineStore('memory', {
     ],
     actualInformation: null,
     isTimerRunning: true,
-    wrongPairs: 0
+    wrongPairs: 0,
+    totalTimer: null
   }),
   //getters
   //actions
@@ -293,6 +296,9 @@ export const useMemoryStore = defineStore('memory', {
         card.show = false
       })
       this.wrongPairs = 0
+    },
+    setTotalTimer(timer: any) {
+      this.totalTimer = timer
     }
   }
 })

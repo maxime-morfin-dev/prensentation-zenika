@@ -30,8 +30,11 @@ const stopwatch = useStopwatch(0, autoStart)
 const store = useMemoryStore()
 const { isTimerRunning } = storeToRefs(store)
 const { wrongPairs } = storeToRefs(store)
+const { isWinner } = storeToRefs(store)
 watch(isTimerRunning, (newTimer, oldTimer) => {
-  console.log('dans le wathcer')
+  if (isWinner && !oldTimer) {
+    store.setTotalTimer(stopwatch)
+  }
   !oldTimer && stopwatch.start()
   oldTimer && stopwatch.pause()
 })
