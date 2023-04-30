@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-zinc-700 bg-opacity-50 text-white w-full p-8 rounded-3xl rounded-tl-none">
+  <div class="bg-zinc-700 bg-opacity-50 text-white w-full p-8 rounded-sm">
     <div class="flex flex-col items-center justify-start">
       <span
         class="flex justify-center items-center text-2xl bg-white bg-opacity-20 p-5 rounded-full w-8 h-8 mb-2"
