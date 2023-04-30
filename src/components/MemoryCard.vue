@@ -1,6 +1,6 @@
 <template>
   <div @click="toggleCardShow(id)" class="cursor-pointer">
-    <Transition mode="out-in" :duration="{ enter: 500, leave: 250 }">
+    <Transition name="flip" mode="out-in">
       <div
         v-if="!cards.find((card) => card.id == id).show"
         class="bg-zinc-700 bg-opacity-50 p-4 h-32 w-full rounded-sm m-auto"
@@ -39,13 +39,13 @@ const { cards } = storeToRefs(store)
 const { pairChoice } = storeToRefs(store)
 </script>
 <style>
-.v-enter-active,
-.v-leave-active {
-  transition: all 0.3s ease;
+.flip-enter-active,
+.flip-leave-active {
+  transition: all 0.1s ease-in-out;
 }
 
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
+.flip-enter-from,
+.flip-leave-to {
+  transform: rotateY(90deg);
 }
 </style>
