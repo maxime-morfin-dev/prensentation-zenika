@@ -185,7 +185,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🇷🇪',
         key: 'reunion',
         value:
-          "J'ai passé toute mon adolescence à l'île de la Réunion. J'ai quitté l'île pour poursuivre mes études et je n'y suis toujours pas retourné depuis. Mes meilleurs souvenir proviennent de mon temps passé là-bas ainsi que mes meilleurs amis.",
+          "J'ai passé toute mon adolescence à l'île de la Réunion. J'ai quitté l'île pour poursuivre mes études et je n'y suis toujours pas retourné depuis. Mes meilleurs souvenirs proviennent de mon temps passé là-bas ainsi que mes meilleurs amis.",
         show: false
       },
       {
@@ -201,7 +201,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '♥️',
         key: 'love',
         value:
-          "Je suis pacsé(e) avec Sandra, une femme au caractère bien trempé et toujours prête pour l'aventure ! Elle est ostéopathe et illustratrice (c'est elle qui a réalisé les icônes que vous pouvez voir). Elle me pousse constamment hors de ma zone de confort, ce qui est génial. Petit fait amusant : elle a également vécu à la Réunion ! Nous vivons ensemble avec notre petit chat Gaia !",
+          "Je suis pacsé avec Sandra, une femme au caractère bien trempé et toujours prête pour l'aventure ! Elle est ostéopathe et illustratrice (c'est elle qui a réalisé les icônes que vous pouvez voir). Elle me pousse constamment hors de ma zone de confort, ce qui est génial. Petit fait amusant : elle a également vécu à la Réunion ! Nous vivons ensemble avec notre petit chat Gaia !",
         show: false
       },
       {
@@ -233,7 +233,7 @@ export const useMemoryStore = defineStore('memory', {
         icone: '🎸',
         key: 'musique',
         value:
-          "Metallica, Metallica, Metallica, Metallica... Que demander de plus ? En réalité, j'apprécie surtout le rock/metal, mais j'aime la musique en général, que ce soit l'électro chill, le slam, le rap français (plutôt tranquille que énervé) et même la vieille musique française. (Qui es chaud pour un blind test ?)",
+          "Metallica, Metallica, Metallica, Metallica... Que demander de plus ? En réalité, j'apprécie surtout le rock/metal, mais j'aime la musique en général, que ce soit l'électro chill, le slam, le rap français (plutôt tranquille que énervé) et même la vieille musique française. (Qui est chaud pour un blind test ?)",
         show: false
       }
     ],

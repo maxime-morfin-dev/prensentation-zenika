@@ -23,8 +23,9 @@
         </p>
         <p><span class="font-bold">⚠️ Attention</span> Le chrono démarre au clic du bouton ⏱️</p>
         <p>
-          Il se mettra sur <span class="font-bold">pause automatiquement </span>lorsque vous
-          trouverez un paire pour vous laisser le <span class="font-bold">temps de lire</span>
+          Lorsque vous trouverez un paire, il se mettra sur
+          <span class="font-bold">⏸️ pause automatiquement </span> pour vous laisser le
+          <span class="font-bold">temps de lire 📚</span>
         </p>
       </div>
     </Transition>
