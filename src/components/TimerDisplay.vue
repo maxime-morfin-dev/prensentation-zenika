@@ -4,7 +4,11 @@
       >{{ stopwatch.hours }} : {{ stopwatch.minutes }} : {{ stopwatch.seconds }}</span
     >
     <div class="flex gap-2 mt-2">
-      <button @click="stopwatch.start()" class="bg-sky-200 bg-opacity-50 px-2 rounded-sm">
+      <button
+        @click="start"
+        class="bg-sky-200 bg-opacity-50 px-2 rounded-sm"
+        v-show="isStartEnable"
+      >
         Start
       </button>
       <button @click="pause" class="bg-red-200 bg-opacity-50 px-2 rounded-sm">Pause</button>
@@ -22,27 +26,38 @@
 import { useStopwatch } from 'vue-timer-hook'
 import { useMemoryStore } from '@/stores/memoryStore'
 import { storeToRefs } from 'pinia'
-import { watch } from 'vue'
+import { watch, ref, onBeforeUnmount } from 'vue'
 
 const autoStart = true
+const isStartEnable = ref(false)
 const stopwatch = useStopwatch(0, autoStart)
 
-const store = useMemoryStore()
-const { isTimerRunning, wrongPairs, isWinner } = storeToRefs(store)
-watch(isTimerRunning, (oldTimer) => {
-  if (isWinner && !oldTimer) {
-    store.setTotalTimer(stopwatch)
-  } else {
-    !oldTimer && stopwatch.start()
-    oldTimer && stopwatch.pause()
+const memoryStore = useMemoryStore()
+const { isTimerRunning, wrongPairs, isWinner } = storeToRefs(memoryStore)
+
+onBeforeUnmount(() => {
+  if (isWinner.value) {
+    console.log('condition gagnante', stopwatch)
+    memoryStore.setTotalTimer(stopwatch)
   }
 })
+
+watch(isTimerRunning, (newTimer) => {
+  newTimer && stopwatch.start()
+  !newTimer && stopwatch.pause()
+})
+const start = () => {
+  stopwatch.start()
+  isStartEnable.value = false
+}
 const pause = () => {
   stopwatch.pause()
-  store.toggleTimerRunning()
+  memoryStore.toggleTimerRunning()
+  isStartEnable.value = true
 }
 const reset = () => {
   stopwatch.reset()
-  store.resetWinArray()
+  memoryStore.resetWinArray()
+  isStartEnable.value = false
 }
 </script>

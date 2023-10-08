@@ -207,7 +207,7 @@ export const useMemoryStore = defineStore('memory', {
   }),
   actions: {
     toggleCardShow(id: number | undefined) {
-      !this.isTimerRunning && (this.isTimerRunning = true)
+      !this.isTimerRunning ?? (this.isTimerRunning = true)
       if (this.cards.find((card: CardInterface) => card.id == id).show) {
         return
       }
@@ -220,6 +220,9 @@ export const useMemoryStore = defineStore('memory', {
     checkFunction(card: { id: number; value: string; show: boolean; informationId: number }) {
       if (this.pairChoice.length == 0) {
         //If array empty add first choice
+        if (this.winArray.length !== 0) {
+          this.isTimerRunning = true
+        }
         this.pairChoice.push(card)
       } else {
         if (this.pairChoice.length == 2) {
@@ -236,7 +239,8 @@ export const useMemoryStore = defineStore('memory', {
             )
             this.pairChoice = []
             this.isTimerRunning = false
-            if (this.winArray.length == 16) {
+
+            if (this.winArray.length === 16) {
               this.isWinner = true
             }
           } else {
